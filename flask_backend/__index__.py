@@ -3,7 +3,7 @@ import flask
 from alpha_vantage.timeseries import TimeSeries
 
 
-app = Flask("__main__")
+app = Flask(__name__)
 
 @app.route("/")
 def my_index():
