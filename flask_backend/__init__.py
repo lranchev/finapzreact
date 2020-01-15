@@ -1,7 +1,6 @@
-from flask import Flask
-import flask
-from alpha_vantage.timeseries import TimeSeries
 
+from flask import Flask
+from alpha_vantage.timeseries import TimeSeries
 
 app = Flask(__name__)
 
@@ -13,4 +12,3 @@ def my_index():
     token_str = "Hello world of react and Flask with a variable in the function"
     return flask.render_template("index.html",token=datastr)
 
-app.run(debug=True)
