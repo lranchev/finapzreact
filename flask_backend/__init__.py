@@ -1,5 +1,6 @@
 
 from flask import Flask
+import flask
 from alpha_vantage.timeseries import TimeSeries
 
 app = Flask(__name__)
