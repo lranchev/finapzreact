@@ -1,6 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import he from 'he'
+
+
+
 
 
 function App() {
@@ -11,8 +15,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-           <p>My token = {window.token}</p>
-        <a
+
+       <p>The last 4 dates pulled from the API are as follows: {he.decode(window.token)}</p>
+       <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
@@ -21,7 +26,7 @@ function App() {
           test  React
         </a>
 
-        <a
+      <a
           className="App-link"
           href="https://cnbc.com"
           target="_blank"
