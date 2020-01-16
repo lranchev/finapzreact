@@ -17,6 +17,8 @@ function App() {
         </p>
 
        <p>The last 4 dates pulled from the API are as follows: {he.decode(window.token)}</p>
+       <p>The last 4 closing prices pulled from the API are as follows: {he.decode(window.token2)}</p>
+
        <a
           className="App-link"
           href="https://reactjs.org"

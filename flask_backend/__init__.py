@@ -4,16 +4,21 @@ import flask
 from alpha_vantage.timeseries import TimeSeries
 
 app = Flask(__name__)
-a = []
+k = []
+v = []
 @app.route("/")
+
+
 def my_index():
     ts = TimeSeries(key='FH0XYNHWNTKNS1PG')
     data, meta_data = ts.get_daily('AKAM')
-    print (type(data))
-    # token_str = "Hello world of react and Flask with a variable in the function"
+    token_str = "Hello world of react and Flask with a variable in the function"
     for key, value in data.items():
-        a.append(key)
-    return flask.render_template("index.html",token=a[0:4])
+        k.append(key)
+        for key1, value1 in value.items():
+            if key1 == "4. close":
+                v.append(value1)
+    return flask.render_template("index.html",token=k[:4],token2=v[:4])
 
 
 #    return flask.render_template("index.html",token=data)
