@@ -37,7 +37,7 @@ function App() {
         >
           Check the latest business news
         </a>
-        <Chart />
+        <Chart legendPosition='bottom'/>
       </header>
     </div>
   );
