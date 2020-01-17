@@ -17,8 +17,12 @@ def my_index():
         k.append(key)
         for key1, value1 in value.items():
             if key1 == "4. close":
-                v.append(value1)
-    return flask.render_template("index.html",token=k[:4],token2=v[:4])
+                v.append(float(value1))
+    v4 = v[:4]
+    v4.reverse()
+    k4 = k[:4]
+    k4.reverse()
+    return flask.render_template("index.html",token=k4,token2=v4)
 
 
 #    return flask.render_template("index.html",token=data)

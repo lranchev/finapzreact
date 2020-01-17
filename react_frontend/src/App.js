@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import he from 'he'
@@ -8,7 +8,36 @@ import Chart from './Components/Chart';
 
 
 
-function App() {
+class App extends Component {
+    constructor(){
+    super();
+    this.state = {
+        chartData:{}
+     }
+    }
+
+    componentWillMount(){
+        this.getChartData();
+    }
+
+    getChartData(){
+        this.setState({
+        chartData:{
+           labels: ['test1','test2','test3','test4'],
+           datasets:[
+            {
+            label:'Closing price',
+            data:[93.93, 95.12, 95.82, 95.31],
+            backgroundColor:[
+            'rgba(255, 99, 132, 0.6)'
+             ]
+             }
+           ]
+         }
+        });
+    }
+
+ render () {
   return (
     <div className="App">
       <header className="App-header">
@@ -37,10 +66,13 @@ function App() {
         >
           Check the latest business news
         </a>
-        <Chart legendPosition='bottom'/>
+
+        <Chart chartData={this.state.chartData} location="Akamai" legendPosition='right'/>
       </header>
     </div>
   );
+
+  }
 }
 
 export default App;
