@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import he from 'he'
+import Chart from './Components/Chart';
 
 
 
@@ -36,6 +37,7 @@ function App() {
         >
           Check the latest business news
         </a>
+        <Chart />
       </header>
     </div>
   );
