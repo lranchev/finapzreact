@@ -41,22 +41,13 @@ class App extends Component {
   return (
     <div className="App">
       <header className="App-header">
+
+       <Chart chartData={this.state.chartData} location="Akamai" legendPosition='right'/>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
 
        <p>The last 4 dates pulled from the API are as follows: {he.decode(window.token)}</p>
        <p>The last 4 closing prices pulled from the API are as follows: {he.decode(window.token2)}</p>
 
-       <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          test  React
-        </a>
 
       <a
           className="App-link"
@@ -67,7 +58,6 @@ class App extends Component {
           Check the latest business news
         </a>
 
-        <Chart chartData={this.state.chartData} location="Akamai" legendPosition='right'/>
       </header>
     </div>
   );
