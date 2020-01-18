@@ -34,10 +34,12 @@ for key, value in d.items():
             v.append(float(value1))
 #        v.append(key1('4. close'))
 
-v4 = v[:4]
-print ("printing", v4)
-v4.reverse()
-print ("printing reverse", v4)
+
+k4 = k[:4]
+print ("printing", k4)
+k4.reverse()
+k4 = json.dumps(k4)
+print ("printing reverse", k4)
 
 # file = 'C:/Users/lranchev/PycharmProjects/finapzreact/flask_backend/sample_data.txt'
 # jsonn = json.dumps(file)

@@ -7,7 +7,6 @@ import Chart from './Components/Chart';
 
 
 
-
 function App() {
 
 
