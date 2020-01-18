@@ -5,7 +5,19 @@ class Chart extends Component{
   constructor(props){
     super(props);
     this.state = {
-     chartData:props.chartData
+     chartData:{
+           labels: this.props.token3,
+           datasets:[
+            {
+            label:'Closing price',
+            data:this.props.token4,
+            backgroundColor:[
+            'rgba(255, 99, 132, 0.6)'
+             ],
+
+             }
+           ]
+      }
     }
   }
 

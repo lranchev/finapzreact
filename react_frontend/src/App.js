@@ -8,45 +8,22 @@ import Chart from './Components/Chart';
 
 
 
-class App extends Component {
-    constructor(){
-    super();
-    this.state = {
-        chartData:{}
-     }
-    }
+function App() {
 
-    componentWillMount(){
-        this.getChartData();
-    }
 
-    getChartData(){
-        this.setState({
-        chartData:{
-           labels: ['test1','test2','test3','test4'],
-           datasets:[
-            {
-            label:'Closing price',
-            data:[93.93, 95.12, 95.82, 95.31],
-            backgroundColor:[
-            'rgba(255, 99, 132, 0.6)'
-             ]
-             }
-           ]
-         }
-        });
-    }
-
- render () {
   return (
     <div className="App">
       <header className="App-header">
 
-       <Chart chartData={this.state.chartData} location="Akamai" legendPosition='right'/>
+
+
+       <Chart token3={window.token3} token4={window.token4} />
         <img src={logo} className="App-logo" alt="logo" />
 
        <p>The last 4 dates pulled from the API are as follows: {he.decode(window.token)}</p>
+       <p>Array: The last 4 dates pulled from the API are as follows: {window.token3}</p>
        <p>The last 4 closing prices pulled from the API are as follows: {he.decode(window.token2)}</p>
+       <p>Array: The last 4 closing prices pulled from the API are as follows: {window.token4}</p>
 
 
       <a
@@ -62,7 +39,7 @@ class App extends Component {
     </div>
   );
 
-  }
+
 }
 
 export default App;
