@@ -5,7 +5,7 @@ import he from 'he'
 import Chart from './Components/Chart';
 
 
-var token3array = window.token3.join().split(',')
+{/* var token3array = window.token3.join().split('-') */}
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
 
 
 
-       <Chart token3={token3array} token4={window.token4} />
+       <Chart token3={window.token3} token4={window.token4} />
         <img src={logo} className="App-logo" alt="logo" />
 
        <p>The last 4 dates pulled from the API are as follows: {he.decode(window.token)}</p>
