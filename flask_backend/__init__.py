@@ -23,6 +23,7 @@ def my_index():
     k4 = k[:4]
     k4.reverse()
     k4 = json.dumps(k4).replace("\"","")
+    k4 = k4.replace("-","")
     return flask.render_template("index.html",token=k4,token2=v4)
 
 

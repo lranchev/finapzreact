@@ -39,6 +39,7 @@ k4 = k[:4]
 print ("printing", k4)
 k4.reverse()
 k4 = json.dumps(k4)
+k4 = k4.replace("-",".")
 print ("printing reverse", k4)
 
 # file = 'C:/Users/lranchev/PycharmProjects/finapzreact/flask_backend/sample_data.txt'
