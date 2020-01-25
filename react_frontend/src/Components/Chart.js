@@ -6,11 +6,11 @@ class Chart extends Component{
     super(props);
     this.state = {
      chartData:{
-           labels: this.props.token3,
+           labels: this.props.chart_label,
            datasets:[
             {
             label:'Closing price',
-            data:this.props.token4,
+            data:this.props.chart_data,
             backgroundColor:[
             'rgba(255, 99, 132, 0.6)'
              ],

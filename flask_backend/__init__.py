@@ -1,30 +1,21 @@
 import json
 from flask import Flask
 import flask
-from alpha_vantage.timeseries import TimeSeries
+from flask_backend.apicall_local import get_ticker_info
 
 app = Flask(__name__)
-k = []
-v = []
+
+
+
 @app.route("/")
+def main():
+    amaz_d, amaz_p = get_ticker_info('AMZN')
+    akam_d, akam_p = get_ticker_info('AKAM')
+    # return flask.render_template("index.html",token1=amaz_d,token2=amaz_p)
+    return flask.render_template("index.html", token1=amaz_d, token2=amaz_p, token3=akam_d, token4=akam_p)
 
 
-def my_index():
-    ts = TimeSeries(key='FH0XYNHWNTKNS1PG')
-    data, meta_data = ts.get_daily('AKAM')
-    token_str = "Hello world of react and Flask with a variable in the function"
-    for key, value in data.items():
-        k.append(key)
-        for key1, value1 in value.items():
-            if key1 == "4. close":
-                v.append(float(value1))
-    v4 = v[:4]
-    v4.reverse()
-    k4 = k[:4]
-    k4.reverse()
-    k4 = json.dumps(k4).replace("\"","`")
-    # k4 = k4.replace("-","")
-    return flask.render_template("index.html",token=k4,token2=v4)
+# main(amaz_d,amaz_p,akam_d,akam_p)
 
 
 #    return flask.render_template("index.html",token=data)
