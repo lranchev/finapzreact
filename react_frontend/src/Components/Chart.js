@@ -39,7 +39,7 @@ class Chart extends Component{
                   options={{
                     title:{
                         display:this.props.displayTitle,
-                        text:'Akamai Stock',
+                        text:this.props.chart_title,
                         fontSize:25
                     },
                     legend:{
