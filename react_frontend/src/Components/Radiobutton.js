@@ -64,13 +64,13 @@ function StyledRadio(props) {
   );
 }
 
-export default function CustomizedRadios() {
+export default function CustomizedRadios({ fetchDataFromFlas }) {
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">Stock picker:</FormLabel>
-      <RadioGroup defaultValue="akam" aria-label="stock_pick" name="customized-radios">
-        <FormControlLabel value="akam" control={<StyledRadio />} label="AKAM Stock" />
-        <FormControlLabel value="amzn" control={<StyledRadio />} label="AMZN Stock" />
+      <RadioGroup defaultValue="akamai" aria-label="stock_pick" name="customized-radios" onChange={fetchDataFromFlas}>
+        <FormControlLabel value="akamai" control={<StyledRadio />} label="AKAM Stock" />
+        <FormControlLabel value="amazon" control={<StyledRadio />} label="AMZN Stock" />
       </RadioGroup>
     </FormControl>
   );

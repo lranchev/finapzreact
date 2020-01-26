@@ -6,14 +6,27 @@ import Chart from './Components/Chart';
 import CustomizedRadios from './Components/Radiobutton';
 
 function App() {
+  const [radioButtonValue, setRadioButtonValue] = React.useState('amazon');
+
+  function fetchDataFromFlas(event) {
+    setRadioButtonValue(event.target.value);
+    if(radioButtonValue === "amazon") {
+      //todo fetch data for amazon
+      console.log('amazon');
+    } else {
+      //todo data for akamai
+      console.log('akamai');
+    }
+  }
 
 
+ 
   return (
     <div className="App">
       <header className="App-header">
 
 
-       <CustomizedRadios/>
+       <CustomizedRadios fetchDataFromFlas={fetchDataFromFlas} />
        <Chart chart_label={window.chart1} chart_data={window.chart2} chart_title="Test Amazon Stock" />
 
       {/*<p>The last 10 dates pulled from the API are as follows: {he.decode(window.chart1)}</p>*/}
